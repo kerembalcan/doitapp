@@ -12,21 +12,25 @@
     "apollo-link-http": "^1.5.14",
     "graphql": "^14.2.1",
     "graphql-tag": "^2.10.1",
+    "immutable": "^4.0.0-rc.12",
     "react": "^16.8.6",
     "react-apollo": "^2.5.4",
     "react-native": "^0.59.0",
     "react-native-gesture-handler": "^1.1.0",
     "react-navigation": "^3.6.1",
     "react-redux": "^6.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.7.0",
+    "flow-bin": "^0.96.0",
     "jest": "^24.7.0",
     "metro-react-native-babel-preset": "^0.53.0",
     "react-test-renderer": "^16.8.6",
-    "redux-devtools": "^3.5.0"
+    "redux-devtools": "^3.5.0",
+    "redux-logger": "^3.0.6"
   },
   "jest": {
     "preset": "react-native"
