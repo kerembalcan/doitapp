@@ -4,6 +4,10 @@ import type {CompleteProps} from "./containers";
 import {Text, View, StyleSheet} from "react-native";
 
 export default class LoginComponent extends React.Component<CompleteProps> {
+
+  componentDidMount() {
+    this.props.loadTasks();
+  }
   render() {
     return <View style={styles.container}>
       <Text style={styles.welcome}>DENEME 1 2 3</Text>

@@ -3,11 +3,9 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import {combineReducers, createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import {apolloClient} from "../graphql/index";
 import AppContainer from "./navigators/index";
-import withProvider from "../graphql/provider";
 import {createLogger} from "redux-logger";
-
+import rootSaga from "./saga";
 import loginReducer from './login/reducer'
 import type {LoginState} from "./login/reducer"
 
@@ -30,14 +28,12 @@ const rootReducer = ( state, action ) => {
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware, logger));
-
-const ApolloClientProvider = withProvider(AppContainer);
+sagaMiddleware.run(rootSaga);
 
 class App extends React.Component<null> {
   render(){
-    console.log(store);
     return <Provider store={store}>
-      <ApolloClientProvider />
+      <AppContainer />
     </Provider>
   }
 }

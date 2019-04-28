@@ -2,6 +2,7 @@
 import { connect } from 'react-redux';
 import LoginComponent from "./components";
 import type {GlobalState} from "../app";
+import {loadTasks} from "./actions";
 
 export function stateToLocalState(state : GlobalState) : LoginState {
   return state.loginReducer;
@@ -19,11 +20,12 @@ function mapStateToProps(state) : StateProps {
 }
 
 export type DispatchProps = {
-
+  loadTasks: () => void
 }
 
 function mapDispatchToProps(dispatch) : DispatchProps{
   return {
+    loadTasks: () => dispatch(loadTasks()),
   }
 }
 
